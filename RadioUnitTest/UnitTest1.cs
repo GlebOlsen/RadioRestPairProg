@@ -88,5 +88,14 @@ namespace RadioUnitTest
             IWebElement recordList = wait.Until(d => d.FindElement(By.Id("recordlists")));
             Assert.IsTrue(recordList.Text.Contains("Otherside"));
         }
+
+        [TestMethod]
+        public void TestMethodUS4()
+        {
+            string url = "https://pairprogram-radiorest.azurewebsites.net/api/radios";
+            _driver.Navigate().GoToUrl("https://pairpromusicrecords.azurewebsites.net/");
+
+
+        }
     }
 }

@@ -12,6 +12,13 @@ namespace RadioRest.Models
         private string _artist;
         private int _durationInSec;
         private int _yearOfPublication;
+        private int _albumId;
+
+        public int AlbumId
+        {
+            get => _albumId;
+            set { _albumId = value; }
+        }
 
         public int Id
         {
@@ -40,13 +47,14 @@ namespace RadioRest.Models
             set { _yearOfPublication = value; }
         }
 
-        public MusicRecord(int id,string title, string artist, int duration, int year)
+        public MusicRecord(int id,string title, string artist, int duration, int year, int albumId)
         {
             Id = id;
             Title = title;
             Artist = artist;
             DurationInSec = duration;
             YearOfPublication = year;
+            AlbumId = albumId;
         }
 
         public MusicRecord()

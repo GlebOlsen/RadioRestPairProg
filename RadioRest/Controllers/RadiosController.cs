@@ -17,37 +17,37 @@ namespace RadioRest.Controllers
         private RadioManager _manager = new RadioManager(); 
         // GET: api/<RadiosController>
         [HttpGet]
-        public IEnumerable<MusicRecord> Get()
+        public IEnumerable<Album> Get()
         {
             return _manager.GetAll();
         }
 
         // GET api/<RadiosController>/5
-        [HttpGet("{id}")]
-        public MusicRecord Get(int id)
+        [HttpGet("{albumId}/musicRecords")]
+        public List<MusicRecord> GetMusicRecord(int albumId)
         {
-            return _manager.GetById(id);
+            return _manager.GetMusicRecord(albumId);
         }
 
-        // POST api/<RadiosController>
-        [HttpPost]
-        public void Post([FromBody] MusicRecord value)
-        {
-            _manager.Add(value);
-        }
+        //// POST api/<RadiosController>
+        //[HttpPost]
+        //public void Post([FromBody] MusicRecord value)
+        //{
+        //    _manager.Add(value);
+        //}
 
-        // PUT api/<RadiosController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] MusicRecord value)
-        {
-            
-        }
+        //// PUT api/<RadiosController>/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] MusicRecord value)
+        //{
 
-        // DELETE api/<RadiosController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-            _manager.Delete(id);
-        }
+        //}
+
+        //// DELETE api/<RadiosController>/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //    _manager.Delete(id);
+        //}
     }
 }
