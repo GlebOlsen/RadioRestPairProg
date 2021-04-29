@@ -29,12 +29,18 @@ namespace RadioRest.Controllers
             return _manager.GetMusicRecord(albumId);
         }
 
-        //// POST api/<RadiosController>
-        //[HttpPost]
-        //public void Post([FromBody] MusicRecord value)
-        //{
-        //    _manager.Add(value);
-        //}
+        // POST api/<RadiosController>
+        [HttpPost]
+        public void Post([FromBody] Album value)
+        {
+            _manager.Add(value);
+        }
+
+        [HttpPost("{albumId}/musicRecords")]
+        public MusicRecord PostMusicRecord(int AlbumId,[FromBody] MusicRecord value)
+        {
+            return _manager.AddMusicRecord(AlbumId, value);
+        }
 
         //// PUT api/<RadiosController>/5
         //[HttpPut("{id}")]

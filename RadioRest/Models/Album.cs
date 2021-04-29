@@ -11,5 +11,10 @@ namespace RadioRest.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public int Songs { get; set; }
+
+        public Album()
+        {
+            
+        }
     }
 }
